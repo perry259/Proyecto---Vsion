@@ -64,7 +64,7 @@ YOLO-Cascos/
 Clonar el repositorio:
 
 ```bash
-git clone URL_DEL_REPOSITORIO
+git clone (https://github.com/perry259/Proyecto---Vsion.git)
 ```
 
 Ingresar a la carpeta del proyecto:
