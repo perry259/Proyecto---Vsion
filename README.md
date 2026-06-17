@@ -3,7 +3,7 @@
 ## Integrantes
 
 * Marco Lopez
-* (Nombre del compañero si aplica)
+* Jesus Baez
 
 ---
 
