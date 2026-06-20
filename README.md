@@ -1,5 +1,19 @@
 # 🦺 Sistema Inteligente de Detección de Cascos de Seguridad mediante YOLOv8
 
+---
+
+## Alumnos
+
+Marco Antonio Palos López
+
+Jesus Antonio Baez Ortega
+
+Ingeniería Mecatrónica
+
+Proyecto Académico de Visión Artificial
+
+---
+
 ## Descripción General
 
 Este proyecto implementa un sistema de Visión Artificial basado en YOLOv8 Nano para la detección automática de cascos de seguridad (helmets) en entornos industriales.
@@ -241,7 +255,7 @@ Posibles integraciones:
 Clonar repositorio:
 
 ```bash
-git clone https://github.com/usuario/proyecto-cascos-yolov8.git
+git clone https://github.com/perry259/Proyecto---Vsion.git
 ```
 
 Instalar dependencias:
@@ -252,15 +266,7 @@ pip install -r requisitos.txt
 
 ---
 
-## Autor
 
-Marco Antonio Palos López
-
-Ingeniería Mecatrónica
-
-Proyecto Académico de Visión Artificial y Automatización Industrial
-
-2026
 # Licencia
 
 Proyecto realizado con fines académicos para la materia de Visión Artificial.
