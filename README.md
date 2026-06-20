@@ -1,7 +1,5 @@
 # 🦺 Sistema Inteligente de Detección de Cascos de Seguridad mediante YOLOv8
 
----
-
 ## Alumnos
 
 Marco Antonio Palos López
