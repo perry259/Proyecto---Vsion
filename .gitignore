@@ -1,5 +1,25 @@
+# Carpetas de entrenamiento locales y pesos pesados (Evita saturar GitHub)
+runs/
+*.pt
+*.onnx
+*.torchscript
+
+# Archivos temporales y descargas locales
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
 __pycache__/
 *.pyc
+mis_evidencias_yolo.zip
+
+# Ignorar datasets locales si se descargaron por error en la raíz
+dataset/
+detecting helmets.yolov8/
+train/
+valid/
+test/
+
+# Configuración del entorno virtual (por si alguien lo corre en PC)
+.venv/
 venv/
-runs/
-.ipynb_checkpoints/
+env/
+ENV/
