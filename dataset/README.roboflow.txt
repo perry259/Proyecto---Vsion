@@ -1,8 +1,8 @@
 
-Personal Protective Equipment - Combined Model - v1 2026-06-16 10:39pm
+detecting helmets - vdataset detecting-helmets-f0i0f-o7gp4
 ==============================
 
-This dataset was exported via roboflow.com on June 17, 2026 at 5:04 AM GMT
+This dataset was exported via roboflow.com on June 20, 2026 at 12:52 AM GMT
 
 Roboflow is an end-to-end computer vision platform that helps you
 * collaborate with your team on computer vision projects
@@ -17,13 +17,7 @@ visit https://github.com/roboflow/notebooks
 
 To find over 100k other datasets and pre-trained models, visit https://universe.roboflow.com
 
-The dataset includes 44002 images.
-Ppe are annotated in openai format.
+The dataset includes 169 images.
+Helmets are annotated in YOLOv8 format.
 
-The following pre-processing was applied to each image:
-* Auto-orientation of pixel data (with EXIF-orientation stripping)
-* Resize to 640x640 (Stretch)
-
-No image augmentation techniques were applied.
-
-
+No pre-processing or augmentation was applied.

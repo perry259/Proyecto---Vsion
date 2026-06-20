@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['helmets']
+
+roboflow:
+  workspace: marcos-workspace-tvsjz
+  project: detecting-helmets-f0i0f-o7gp4
+  version: dataset
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/marcos-workspace-tvsjz/detecting-helmets-f0i0f-o7gp4/dataset/dataset
