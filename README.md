@@ -1,202 +1,266 @@
-# Sistema de Visión Artificial para Detección de Cascos de Seguridad mediante YOLO
+# 🦺 Sistema Inteligente de Detección de Cascos de Seguridad mediante YOLOv8
 
-## Integrantes
+## Descripción General
 
-* Marco Lopez
-* Jesus Baez
+Este proyecto implementa un sistema de Visión Artificial basado en YOLOv8 Nano para la detección automática de cascos de seguridad (helmets) en entornos industriales.
 
----
+El objetivo principal es apoyar el cumplimiento de las normas de seguridad dentro de almacenes, centros logísticos y áreas de producción, identificando en tiempo real a las personas que no portan correctamente su Equipo de Protección Personal (EPP).
 
-# Descripción del Proyecto
-
-Este proyecto tiene como objetivo implementar un sistema de Visión Artificial utilizando un modelo de la familia YOLO (You Only Look Once) para la detección automática de equipo de seguridad industrial, específicamente cascos de protección.
-
-El modelo será entrenado mediante un conjunto de imágenes etiquetadas para reconocer la presencia de cascos en un entorno laboral, con la finalidad de proponer una solución aplicable dentro de un almacén o línea de producción donde se requiera mantener los estándares de seguridad.
+Como etapa futura, este sistema podrá integrarse con alarmas sonoras, sistemas SCADA, PLCs o plataformas de monitoreo industrial para generar alertas automáticas cuando se detecte personal sin casco.
 
 ---
-
-# Objetivo
-
-Desarrollar un modelo de detección de objetos capaz de identificar el uso correcto de casco de seguridad mediante imágenes o video en tiempo real, demostrando cómo una solución basada en inteligencia artificial puede integrarse en procesos industriales para mejorar la supervisión y prevención de riesgos.
-
----
-
-# Tecnologías Utilizadas
-
-* Python 3.x
-* YOLOv8
-* OpenCV
-* PyTorch
-* NumPy
-* Matplotlib
-* GitHub
-
----
-
-# Estructura del Proyecto
-
-```text
-YOLO-Cascos/
-│
-├── dataset/
-│   ├── train/
-│   ├── valid/
-│   ├── test/
-│   └── data.yaml
-│
-├── src/
-│   ├── train.py
-│   └── detect.py
-│
-├── evidencias/
-│   ├── imagenes de prueba
-│   └── videos de detección
-│
-├── requirements.txt
-│
-└── README.md
-```
-
----
-
-# Instalación
-
-Clonar el repositorio:
-
-```bash
-git clone (https://github.com/perry259/Proyecto---Vsion.git)
-```
-
-Ingresar a la carpeta del proyecto:
-
-```bash
-cd YOLO-Cascos
-```
-
-Instalar las dependencias:
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-# Entrenamiento del Modelo
-
-El modelo YOLO será entrenado utilizando un dataset de imágenes etiquetadas con elementos relacionados al equipo de seguridad industrial.
-
-Para iniciar el entrenamiento ejecutar:
-
-```bash
-python src/train.py
-```
-
-Durante el entrenamiento el modelo aprenderá las características visuales necesarias para identificar los cascos de seguridad.
-
----
-
-# Prueba del Modelo
-
-Para realizar detecciones en nuevas imágenes:
-
-```bash
-python src/detect.py
-```
-
-El modelo generará predicciones indicando la ubicación del objeto detectado mediante cuadros delimitadores (bounding boxes).
-
----
-
-# Dataset
-
-El dataset utilizado contiene imágenes relacionadas con seguridad industrial, donde se encuentran objetos etiquetados para permitir el entrenamiento supervisado del modelo YOLO.
-
-Las imágenes son divididas en:
-
-* Train: imágenes utilizadas para entrenar el modelo.
-* Validation: imágenes utilizadas para evaluar el aprendizaje durante el entrenamiento.
-* Test: imágenes utilizadas para comprobar el funcionamiento final.
-
----
-
-# Caso de Estudio: Implementación Industrial
 
 ## Problema a Resolver
 
-En ambientes industriales como almacenes y líneas de producción es necesario asegurar que los trabajadores utilicen correctamente su equipo de protección personal (EPP).
+En muchos almacenes y plantas industriales existen zonas donde el uso del casco de seguridad es obligatorio.
 
-Actualmente muchas inspecciones se realizan de manera manual, lo que puede provocar errores humanos o falta de supervisión constante.
+La supervisión manual presenta limitaciones:
 
-La propuesta es implementar un sistema automático capaz de detectar si los trabajadores cuentan con casco de seguridad antes de ingresar o durante su actividad dentro del área industrial.
+- Dependencia de supervisores humanos.
+- Posibilidad de errores por distracción.
+- Dificultad para monitorear múltiples áreas simultáneamente.
+- Costos operativos elevados.
 
----
-
-# Hardware Propuesto
-
-El sistema estaría compuesto por:
-
-* Cámara industrial o cámara IP instalada en puntos estratégicos.
-* Computadora industrial con capacidad de procesamiento para ejecutar YOLO.
-* Sistema de comunicación con PLC.
-* Pantalla de monitoreo.
-* Sistema de alarma o señalización.
+Este proyecto propone una solución automatizada basada en Inteligencia Artificial capaz de detectar el uso de cascos de seguridad mediante cámaras de vigilancia.
 
 ---
 
-# Flujo de Funcionamiento
+## Objetivos
 
-1. Una cámara captura imágenes del área de trabajo.
-2. El modelo YOLO analiza cada imagen en tiempo real.
-3. El sistema identifica si existe presencia de casco de seguridad.
-4. Si el trabajador cumple con el estándar:
+### Objetivo General
 
-   * Permite continuar el proceso.
-5. Si detecta ausencia de casco:
+Desarrollar un sistema de detección automática de cascos de seguridad utilizando redes neuronales convolucionales y el modelo YOLOv8 Nano.
 
-   * Envía una alerta al sistema de control.
-   * Puede activar una alarma visual o sonora.
-   * Puede detener temporalmente la línea de producción.
+### Objetivos Específicos
 
----
-
-# Aplicación en una Línea de Producción
-
-El sistema podría instalarse en el acceso a una zona industrial o cerca de una línea de producción.
-
-Cuando un operador ingresa al área de trabajo, la cámara verifica automáticamente el cumplimiento del equipo de seguridad.
-
-La información generada por el modelo puede enviarse a un PLC industrial para tomar decisiones automáticas y ayudar a mantener los estándares de seguridad.
+- Entrenar un modelo de detección de objetos utilizando YOLOv8.
+- Detectar automáticamente cascos de seguridad en imágenes.
+- Visualizar las detecciones mediante bounding boxes.
+- Evaluar el desempeño del modelo utilizando métricas estándar.
+- Sentar las bases para una futura integración con sistemas de alerta industrial.
 
 ---
 
-# Evidencias
+## Tecnologías Utilizadas
 
-Dentro de la carpeta `evidencias` se almacenarán:
-
-* Imágenes con detecciones realizadas por YOLO.
-* Capturas del modelo funcionando.
-* Videos de prueba.
-
----
-
-# Resultados Esperados
-
-Se espera obtener un modelo capaz de reconocer correctamente cascos de seguridad y demostrar una aplicación práctica de la Visión Artificial dentro de un ambiente industrial.
+- Python 3.10+
+- Google Colab
+- YOLOv8 Nano
+- Ultralytics
+- OpenCV
+- NumPy
+- Matplotlib
+- Roboflow
 
 ---
 
-# Repositorio
+## Arquitectura del Sistema
 
-Este repositorio contiene:
-
-* Código fuente del entrenamiento y pruebas.
-* Configuración del modelo.
-* Dataset utilizado.
-* Evidencias del funcionamiento.
-* Documentación del caso de estudio.
+```text
+Cámara / Imagen
+       │
+       ▼
+Preprocesamiento
+(OpenCV)
+       │
+       ▼
+YOLOv8 Nano
+(Modelo entrenado)
+       │
+       ▼
+Detección de Cascos
+       │
+       ▼
+Visualización de Resultados
+(Bounding Boxes)
+       │
+       ▼
+Futuras Alertas Sonoras
+o Integración Industrial
+```
 
 ---
 
+## Estructura del Proyecto
+
+```text
+Proyecto/
+│
+├── Evidencias/
+│   ├── train_batch0.jpg
+│   ├── train_batch2.jpg
+│   ├── PROYECTO.ipynb
+│   └── capturas de resultados
+│
+├── conjunto de datos/
+│   ├── train/
+│   │   ├── images/
+│   │   └── labels/
+│   │
+│   ├── valid/
+│   │   ├── images/
+│   │   └── labels/
+│   │
+│   ├── test/
+│   │   ├── images/
+│   │   └── labels/
+│   │
+│   ├── data.yaml
+│   ├── README.dataset.txt
+│   └── README.roboflow.txt
+│
+├── README.md
+├── requisitos.txt
+└── .gitignore
+```
+
+---
+
+## Dataset
+
+El conjunto de datos fue obtenido y anotado mediante Roboflow.
+
+Características:
+
+- Clase detectada: helmet
+- Formato: YOLOv8
+- División:
+  - Entrenamiento (train)
+  - Validación (valid)
+  - Pruebas (test)
+
+El dataset contiene imágenes de trabajadores utilizando cascos de seguridad en diferentes condiciones de iluminación, distancia y perspectiva.
+
+---
+
+## Entrenamiento del Modelo
+
+Modelo utilizado:
+
+- YOLOv8 Nano (yolov8n)
+
+Parámetros principales:
+
+```python
+epochs = 20
+imgsz = 640
+```
+
+Entrenamiento realizado en:
+
+- Google Colab
+- GPU NVIDIA T4
+
+---
+
+## Resultados
+
+El modelo es capaz de:
+
+✅ Detectar cascos de seguridad.
+
+✅ Dibujar bounding boxes automáticamente.
+
+✅ Mostrar el porcentaje de confianza de cada detección.
+
+✅ Procesar imágenes cargadas por el usuario.
+
+Ejemplo de salida:
+
+```text
+Cantidad de cascos detectados: 3
+
+Casco 1: 96.41%
+Casco 2: 94.12%
+Casco 3: 92.87%
+```
+
+---
+
+## Aplicaciones Industriales
+
+Este proyecto puede utilizarse como base para:
+
+- Supervisión automática de seguridad.
+- Monitoreo de EPP en almacenes.
+- Control de acceso a zonas restringidas.
+- Prevención de accidentes laborales.
+- Integración con sistemas de alarma.
+- Integración con PLCs industriales.
+- Integración con sistemas SCADA.
+
+---
+
+## Mejoras Futuras
+
+### Detección de Personas sin Casco
+
+Actualmente el sistema detecta únicamente la presencia de cascos.
+
+Una mejora futura consiste en:
+
+1. Detectar personas.
+2. Detectar cascos.
+3. Relacionar ambas detecciones.
+4. Determinar si una persona porta casco.
+5. Generar una alerta si no cumple con la normativa.
+
+---
+
+### Sistema de Alarma Sonora
+
+Cuando una persona ingrese a una zona sin casco:
+
+```text
+⚠️ ALERTA DE SEGURIDAD
+
+Se detectó personal sin Equipo
+de Protección Personal.
+
+Favor de colocarse el casco de seguridad.
+```
+
+---
+
+### Implementación en Tiempo Real
+
+Posibles integraciones:
+
+- Cámaras IP.
+- CCTV industrial.
+- Raspberry Pi.
+- NVIDIA Jetson Nano.
+- PLC Siemens.
+- PLC Allen Bradley.
+- Sistemas SCADA.
+
+---
+
+## Instalación
+
+Clonar repositorio:
+
+```bash
+git clone https://github.com/usuario/proyecto-cascos-yolov8.git
+```
+
+Instalar dependencias:
+
+```bash
+pip install -r requisitos.txt
+```
+
+---
+
+## Autor
+
+Marco Antonio Palos López
+
+Ingeniería Mecatrónica
+
+Proyecto Académico de Visión Artificial y Automatización Industrial
+
+2026
 # Licencia
 
 Proyecto realizado con fines académicos para la materia de Visión Artificial.
